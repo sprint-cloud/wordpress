@@ -16,6 +16,7 @@ RUN composer install \
 
 # Stap 2: Bouw de container voor je app op basis van een php-nginx image en kopieer 
 FROM trafex/php-nginx:latest
+LABEL org.opencontainers.image.source https://github.com/sprint-cloud/wordpress
 # numerieke user aanduiding nodig voor nonroot K8S
 USER root
 

@@ -1,0 +1,7 @@
+# Naam van je project
+project: my-blog
+configVersion: 1
+---
+# De docker image van je app
+image: wordpress
+dockerfile: wordpress.Dockerfile

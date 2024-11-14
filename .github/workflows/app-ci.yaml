@@ -1,0 +1,45 @@
+name: App Deployment
+
+on:
+  push:
+    branches: ['main']
+    tags:
+      - 'v*'
+  pull_request:
+    types: [opened, reopened]
+env:
+  IS_RELEASE: ${{ startsWith(github.ref, 'refs/tags/') }
+  WERF_REPO: ghcr.io/${{ github.repository }}
+  WERF_ENV: production
+  GITHUB_TOKEN: ${{ github.token }}
+jobs:
+  build-and-publish-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Install werf
+        uses: werf/actions/install@v2
+      - name: Test helm chart
+        run: |
+          werf 
+
+      - name: Build Release
+        run: |
+          . $(werf ci-env github --as-file)
+          werf build
+
+      - name: Publish Release
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          . $(werf ci-env github --as-file)
+          werf bundle publish --tag 0.0.${{github.run_id}}
+  

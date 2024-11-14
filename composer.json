@@ -1,0 +1,30 @@
+{
+  "type": "project",
+  "config": {
+      "vendor-dir": "vendor",
+    "allow-plugins": {
+      "johnpbloch/wordpress-core-installer": true,
+      "composer/installers": true
+    }
+  },
+  "extra": {
+      "wordpress-install-dir": "wordpress",
+      "installer-paths": {
+        "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+        "wordpress/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  },
+  "require": {
+      "johnpbloch/wordpress": ">=5.1",
+      "wpackagist-plugin/daggerhart-openid-connect-generic":"3.*",
+      "wp-cli/wp-cli-bundle": "*"
+
+  },
+  "repositories": [
+      {
+          "type": "composer",
+          "url" : "https://wpackagist.org"
+      }
+  ]
+
+}

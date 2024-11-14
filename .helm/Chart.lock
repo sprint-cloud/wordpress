@@ -1,0 +1,6 @@
+dependencies:
+- name: wordpress
+  repository: ""
+  version: 1.0.0
+digest: sha256:03b760266fb63b4b1b696403856fb1b055fbc83d01c5cb2e5c45a98b07f0025c
+generated: "2024-11-11T21:01:56.320992756+01:00"

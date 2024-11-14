@@ -1,0 +1,11 @@
+global:
+  hub:
+    owner: user
+    sourceRepo: https://git.example.com/repo
+wordpress:
+  env: 
+  - name: test
+    value: "value4"
+  
+  config:
+    test: "value"

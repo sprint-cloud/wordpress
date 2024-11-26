@@ -6,6 +6,9 @@ dependencies:
   - name: hub
     version: 0.0.1
     repository: "file://../hub"
+    export-values:
+    - parent: werf
+      child: werf
   - name: mariadb
     version: "~20.0.0"
     repository: oci://registry-1.docker.io/bitnamicharts

@@ -27,18 +27,21 @@ jobs:
       - name: Install werf
         uses: werf/actions/install@v2
 
-      - name: Test helm chart
-        run: |
-          werf helm template .helm
-
       - name: Build Image
         run: |
           . $(werf ci-env github --as-file)
           werf build
+      
+      - name: Test helmchart
+        run: 
+          . $(werf ci-env github --as-file)
+          werf bundle render
 
       - name: Publish Release
         if: ${{ github.event_name == 'push' }}
         run: |
           . $(werf ci-env github --as-file)
+
+          # Publish helmchart to repo
           werf bundle publish --tag 0.0.${{github.run_id}}
   

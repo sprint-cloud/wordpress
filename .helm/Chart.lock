@@ -1,6 +1,6 @@
 dependencies:
-- name: wordpress
-  repository: ""
-  version: 1.0.0
-digest: sha256:03b760266fb63b4b1b696403856fb1b055fbc83d01c5cb2e5c45a98b07f0025c
-generated: "2024-11-11T21:01:56.320992756+01:00"
+- name: mariadb
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 20.0.0
+digest: sha256:7b6d5b7f9661d60a8f454ad15f29b76022a913d7855913ac202c6b88b77e826e
+generated: "2024-11-27T15:55:49.002794109+01:00"

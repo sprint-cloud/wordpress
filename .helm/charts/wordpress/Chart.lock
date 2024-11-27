@@ -1,9 +1,0 @@
-dependencies:
-- name: hub
-  repository: file://../hub
-  version: 0.0.1
-- name: mariadb
-  repository: oci://registry-1.docker.io/bitnamicharts
-  version: 20.0.0
-digest: sha256:cd2b8d2497c46f5e4c7b3ee66a10c7fdcee9d4d4a656dcda124965d14b173bc3
-generated: "2024-11-26T18:49:14.196185399+01:00"

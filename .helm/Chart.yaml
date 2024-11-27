@@ -1,11 +1,10 @@
-name: wordpress
-version: 1.0.0
 apiVersion: v2
+name: wordpress
+description: Wordpress for Sprint
+type: application
 
 dependencies:
-  - name: wordpress
-    version: 1.0.0
-    export-values:
-    - parent: werf
-      child: werf
- 
+  - name: mariadb
+    version: "~20.0.0"
+    repository: oci://registry-1.docker.io/bitnamicharts
+    condition: mariadb.enabled

@@ -38,6 +38,7 @@ securityContext:
      - ALL
    readOnlyRootFilesystem: false
    runAsNonRoot: true
+   allowPrivilegeEscalation: false   
 
 service:
   type: ClusterIP

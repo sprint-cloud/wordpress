@@ -30,8 +30,8 @@ podEnv:
     value: wordpress
   - name: WORDPRESS_DB_USER
     value: wordpress
-  - name: WORDPRESS_DEBUG
-    value: 'true'
+  # - name: WORDPRESS_DEBUG
+  #   value: 'true'
 securityContext: 
    capabilities:
      drop:

@@ -38,8 +38,9 @@ securityContext:
      - ALL
    readOnlyRootFilesystem: false
    runAsNonRoot: true
-   allowPrivilegeEscalation: false   
-
+   allowPrivilegeEscalation: false 
+   seccompProfile:
+    type: RuntimeDefault  
 service:
   type: ClusterIP
   port: 8080

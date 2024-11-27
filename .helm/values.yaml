@@ -96,10 +96,9 @@ mariadb:
   fullnameOverride: mariadb
   architecture: standalone
   auth:
-    rootPassword: ""
     database: wordpress
     username: wordpress
-    password: ""
+    existingSecret: mariadb-creds
   primary:
     persistence:
       enabled: true

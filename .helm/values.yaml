@@ -49,6 +49,7 @@ ingress:
   enabled: false
   annotations: {}
   domain: app.example.com
+  ingressClass: exampleclass
   path: '/'
 
 resources:
